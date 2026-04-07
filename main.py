@@ -1,4 +1,3 @@
-#main file for the Tournament App.
 """
 Basketball Tournament Scoring App
 Unit: Programming - Design Document
@@ -18,3 +17,22 @@ def main():
     print("This app will help you manage and score a basketball tournament.")
     print("You can enter team names, player names, and game results to calculate scores.")
     print("Let's get started!")
+
+teams = []        # {name, players:[str], game_scores:[int], points:[int]}
+individuals = []  # {name, game_scores:[int], points:[int]}
+
+def get_valid_int(prompt, min_val=None, max_val=None):
+    """Keep asking until a valid integer is entered."""
+    while True:
+        raw = input(prompt).strip()
+        if not raw.lstrip("-").isdigit():
+            print("  Error: enter a whole number, not letters.")
+            continue
+        value = int(raw)
+        if min_val is not None and value < min_val:
+            print(f"  Error: must be at least {min_val}.")
+            continue
+        if max_val is not None and value > max_val:
+            print(f"  Error: must be at most {max_val}.")
+            continue
+        return value
