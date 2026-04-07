@@ -18,8 +18,8 @@ def main():
     print("You can enter team names, player names, and game results to calculate scores.")
     print("Let's get started!")
 
-teams = []        # {name, players:[str], game_scores:[int], points:[int]}
-individuals = []  # {name, game_scores:[int], points:[int]}
+teams = []        
+individuals = [] 
 
 def get_valid_int(prompt, min_val=None, max_val=None):
     """Keep asking until a valid integer is entered."""
