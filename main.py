@@ -36,3 +36,10 @@ def get_valid_int(prompt, min_val=None, max_val=None):
             print(f"  Error: must be at most {max_val}.")
             continue
         return value
+
+def print_separator(char="─", width=52):
+    print(char * width)
+
+
+def total_points(obj):
+    return sum(obj["points"])
