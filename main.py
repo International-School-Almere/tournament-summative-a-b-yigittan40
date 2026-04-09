@@ -43,3 +43,17 @@ def print_separator(char="─", width=52):
 
 def total_points(obj):
     return sum(obj["points"])
+
+def add_team():
+    if len(teams) >= MAX_TEAMS:
+        print(f"  Max {MAX_TEAMS} teams already added.")
+        return
+
+    print("\n── Add a Basketball Team ──")
+    name = input("  Team name: ").strip()
+    if not name:
+        print("  Error: name cannot be empty.")
+        return
+    if any(t["name"].lower() == name.lower() for t in teams):
+        print("  Error: team name already exists.")
+        return
