@@ -12,12 +12,6 @@ MAX_TEAMS = 4       # 4 basketball teams
 TEAM_SIZE = 5       # 5 players per team
 MAX_INDIVIDUALS = 20  # up to 20 individual players (e.g. free throw contest)
 
-def main():
-    print("Welcome to the Basketball Tournament Scoring App!")
-    print("This app will help you manage and score a basketball tournament.")
-    print("You can enter team names, player names, and game results to calculate scores.")
-    print("Let's get started!")
-
 teams = []        
 individuals = [] 
 
