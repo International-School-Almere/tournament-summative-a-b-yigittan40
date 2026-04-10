@@ -5,49 +5,62 @@ Learning Aim: A and B
 Name: Yigit Tan
 """
 
-# Points awarded based on rank in each game
-POINTS_SYSTEM = {1: 10, 2: 7, 3: 5, 4: 3, 5: 1}
-MAX_GAMES = 5       # up to 5 games in the tournament
-MAX_TEAMS = 4       # 4 basketball teams
-TEAM_SIZE = 5       # 5 players per team
-MAX_INDIVIDUALS = 20  # up to 20 individual players (e.g. free throw contest)
+import tkinter as tk
+from tkinter import messagebox
 
-teams = []        
-individuals = [] 
+team_names   = []   
+team_players = []  
+team_scores  = []   
 
-def get_valid_int(prompt, min_val=None, max_val=None):
-    """Keep asking until a valid integer is entered."""
-    while True:
-        raw = input(prompt).strip()
-        if not raw.lstrip("-").isdigit():
-            print("  Error: enter a whole number, not letters.")
-            continue
-        value = int(raw)
-        if min_val is not None and value < min_val:
-            print(f"  Error: must be at least {min_val}.")
-            continue
-        if max_val is not None and value > max_val:
-            print(f"  Error: must be at most {max_val}.")
-            continue
-        return value
+player_names  = []  
+player_scores = [] 
 
-def print_separator(char="─", width=52):
-    print(char * width)
-
-
-def total_points(obj):
-    return sum(obj["points"])
+def get_points(rank):
+    if rank == 1:
+        return 10
+    if rank == 2:
+        return 7
+    if rank == 3:
+        return 5
+    if rank == 4:
+        return 3
+    if rank == 5:
+        return 1
+    return 0
 
 def add_team():
-    if len(teams) >= MAX_TEAMS:
-        print(f"  Max {MAX_TEAMS} teams already added.")
+    name = team_name_entry.get()
+    name = name.strip()
+
+    if name == "":
+        messagebox.showerror("Error", "Team name cannot be empty.")
         return
 
-    print("\n── Add a Basketball Team ──")
-    name = input("  Team name: ").strip()
-    if not name:
-        print("  Error: name cannot be empty.")
+    if len(team_names) >= 4:
+        messagebox.showerror("Error", "Maximum 4 teams already added.")
         return
-    if any(t["name"].lower() == name.lower() for t in teams):
-        print("  Error: team name already exists.")
+
+    if name in team_names:
+        messagebox.showerror("Error", "Team name already exists.")
         return
+
+    players_text = players_entry.get()
+    players_text = players_text.strip()
+
+    if players_text == "":
+        messagebox.showerror("Error", "Players cannot be empty.")
+        return
+
+    players = players_text.split(",")
+
+    if len(players) != 5:
+        messagebox.showerror("Error", "Please enter exactly 5 players, separated by commas.")
+        return
+
+    team_names.append(name)
+    team_players.append(players)
+    team_scores.append([0, 0, 0, 0, 0])
+
+    status_label.config(text="Team " + name + " added!")
+    team_name_entry.delete(0, tk.END)
+    players_entry.delete(0, tk.END)
