@@ -64,3 +64,25 @@ def add_team():
     status_label.config(text="Team " + name + " added!")
     team_name_entry.delete(0, tk.END)
     players_entry.delete(0, tk.END)
+
+def add_player():
+    name = player_name_entry.get()
+    name = name.strip()
+
+    if name == "":
+        messagebox.showerror("Error", "Player name cannot be empty.")
+        return
+
+    if len(player_names) >= 20:
+        messagebox.showerror("Error", "Maximum 20 players already added.")
+        return
+
+    if name in player_names:
+        messagebox.showerror("Error", "Player already exists.")
+        return
+
+    player_names.append(name)
+    player_scores.append([0, 0, 0, 0, 0])
+
+    status_label.config(text="Player " + name + " added!")
+    player_name_entry.delete(0, tk.END)
