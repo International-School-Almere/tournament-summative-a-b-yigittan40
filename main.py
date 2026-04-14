@@ -86,3 +86,47 @@ def add_player():
 
     status_label.config(text="Player " + name + " added!")
     player_name_entry.delete(0, tk.END)
+
+def save_score():
+    game_text  = game_entry.get().strip()
+    name       = score_name_entry.get().strip()
+    score_text = score_entry.get().strip()
+
+    if game_text == "" or name == "" or score_text == "":
+        messagebox.showerror("Error", "Please fill in all three score fields.")
+        return
+
+    if not game_text.isdigit():
+        messagebox.showerror("Error", "Game number must be a number, not letters.")
+        return
+
+    if not score_text.isdigit():
+        messagebox.showerror("Error", "Score must be a number, not letters.")
+        return
+
+    game_num = int(game_text)
+    score    = int(score_text)
+
+    if game_num < 1 or game_num > 5:
+        messagebox.showerror("Error", "Game number must be between 1 and 5.")
+        return
+    
+    found = False
+
+    for i in range(len(team_names)):
+        if team_names[i] == name:
+            team_scores[i][game_num - 1] = score
+            found = True
+
+    for i in range(len(player_names)):
+        if player_names[i] == name:
+            player_scores[i][game_num - 1] = score
+            found = True
+
+    if not found:
+        messagebox.showerror("Error", name + " was not found. Add them first.")
+        return
+
+    status_label.config(text="Score saved! " + name + " scored " + score_text + " in Game " + game_text)
+    score_entry.delete(0, tk.END)
+    
