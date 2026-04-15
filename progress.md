@@ -39,9 +39,51 @@ April 14:Added save_score function with validation and error handling for score 
 
 ---
 ## Session [01]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+**Date:** April 7
+**Time spent:** [30 mins]  
+**Focus:** [Added initial structure and documentation for the Basketball Tournament Scoring App]
+
+## Session [02]
+**Date:** April 7
+**Time spent:** [25 mins]  
+**Focus:** [Refactor main function and add input validation for integer entries]
+
+## Session [03]
+**Date:** April 7
+**Time spent:** [5 mins]  
+**Focus:** [Cleaned up comments for teams and individuals initialization]
+
+## Session [04]
+**Date:** April 8
+**Time spent:** [1 hour]  
+**Focus:** [Added print_separator function and ensure newline at end of file]
+
+## Session [05]
+**Date:** April 9
+**Time spent:** [30 mins]  
+**Focus:** [Added add_team function to handle team registration with validation]
+
+## Session [06]
+**Date:** April 9
+**Time spent:** [30 mins]  
+**Focus:** [Removed main function and its welcome messages from the Basketball Tournament Scoring App]
+
+## Session [07]
+**Date:** April 10
+**Time spent:** [1 hour]  
+**Focus:** [Refactor add_team function to use messagebox for error handling and remove unused variables]
+
+## Session [08]
+**Date:** April 13
+**Time spent:** [1 hour]  
+**Focus:** [Added add_player function to handle player registration with validation]
+
+## Session [09]
+**Date:** April 14
+**Time spent:** [1 hour]  
+**Focus:** [Added save_score function with validation and error handling for score input]
+
+
 
 ### Problems / Challenges
 - 
