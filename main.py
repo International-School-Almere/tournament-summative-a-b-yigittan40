@@ -130,3 +130,27 @@ def save_score():
     status_label.config(text="Score saved! " + name + " scored " + score_text + " in Game " + game_text)
     score_entry.delete(0, tk.END)
     
+    def show_leaderboard():
+    all_names  = []
+    all_totals = []
+    all_types  = []
+
+    for i in range(len(team_names)):
+        total = 0
+        for s in team_scores[i]:
+            total = total + s
+        all_names.append(team_names[i])
+        all_totals.append(total)
+        all_types.append("Team")
+
+    for i in range(len(player_names)):
+        total = 0
+        for s in player_scores[i]:
+            total = total + s
+        all_names.append(player_names[i])
+        all_totals.append(total)
+        all_types.append("Player")
+ 
+    if len(all_names) == 0:
+        messagebox.showinfo("Leaderboard", "No teams or players added yet.")
+        return

@@ -35,6 +35,7 @@ April 9:Removed main function and its welcome messages from the Basketball Tourn
 April 10:Refactor add_team function to use messagebox for error handling and remove unused variables
 April 13:Added add_player function to handle player registration with validation
 April 14:Added save_score function with validation and error handling for score input
+April 15:Added show_leaderboard function to display total scores for teams and players
 > Add a new session at the top each time you work.
 
 ---
@@ -82,6 +83,11 @@ April 14:Added save_score function with validation and error handling for score 
 **Date:** April 14
 **Time spent:** [1 hour]  
 **Focus:** [Added save_score function with validation and error handling for score input]
+
+## Session [10]
+**Date:** April 15
+**Time spent:** [1 hour]  
+**Focus:** [Added show_leaderboard function to display total scores for teams and players]
 
 
 
