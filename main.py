@@ -189,7 +189,6 @@ def show_leaderboard():
 window = tk.Tk()
 window.title("Basketball Tournament Scorer")
  
-# add team section
 tk.Label(window, text="Team name").grid(row=0, column=0, sticky="e", padx=6, pady=4)
 tk.Label(window, text="Players (comma separated)").grid(row=1, column=0, sticky="e", padx=6, pady=4)
  
@@ -202,7 +201,6 @@ players_entry.insert(0, "Alice, Bob, Carl, Dana, Eve")
  
 tk.Button(window, text="Add Team", command=add_team).grid(row=0, column=2, padx=6)
  
-# add individual player section
 tk.Label(window, text="Player name").grid(row=2, column=0, sticky="e", padx=6, pady=4)
  
 player_name_entry = tk.Entry(window, width=30)
@@ -210,10 +208,8 @@ player_name_entry.grid(row=2, column=1, pady=4)
  
 tk.Button(window, text="Add Player", command=add_player).grid(row=2, column=2, padx=6)
  
-# divider
 tk.Label(window, text="─" * 44).grid(row=3, column=0, columnspan=3, pady=2)
  
-# enter score section
 tk.Label(window, text="Game number (1-5)").grid(row=4, column=0, sticky="e", padx=6, pady=4)
 tk.Label(window, text="Team or Player name").grid(row=5, column=0, sticky="e", padx=6, pady=4)
 tk.Label(window, text="Points scored").grid(row=6, column=0, sticky="e", padx=6, pady=4)
@@ -229,13 +225,10 @@ score_entry.grid(row=6, column=1, pady=4)
  
 tk.Button(window, text="Save Score", command=save_score).grid(row=6, column=2, padx=6)
  
-# divider
 tk.Label(window, text="─" * 44).grid(row=7, column=0, columnspan=3, pady=2)
  
-# leaderboard button
 tk.Button(window, text="Show Leaderboard", command=show_leaderboard).grid(row=8, column=1, pady=6)
  
-# status message at the bottom
 status_label = tk.Label(window, text="", fg="green")
 status_label.grid(row=9, column=0, columnspan=3, pady=4)
  
