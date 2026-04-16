@@ -37,6 +37,7 @@ April 13:Added add_player function to handle player registration with validation
 April 14:Added save_score function with validation and error handling for score input
 April 15:Added show_leaderboard function to display total scores for teams and players
 April 16:Added leaderboard functionality to display ranked scores for teams and players
+April 17:Implemented GUI for score entry and leaderboard display
 > Add a new session at the top each time you work.
 
 ---
@@ -90,10 +91,15 @@ April 16:Added leaderboard functionality to display ranked scores for teams and 
 **Time spent:** [1 hour]  
 **Focus:** [Added show_leaderboard function to display total scores for teams and players]
 
-## Session [10]
+## Session [11]
 **Date:** April 16
 **Time spent:** [1 hour]  
 **Focus:** [Added leaderboard functionality to display ranked scores for teams and players]
+
+## Session [12]
+**Date:** April 16
+**Time spent:** [1 hour]  
+**Focus:** [Implemented GUI for score entry and leaderboard display]
 
 
 ### Problems / Challenges
@@ -151,7 +157,7 @@ April 16:Added leaderboard functionality to display ranked scores for teams and 
 
 ### Problems / Challenges
 - Line 134 All Names (error)
-- 
+- line 222 sharedline (error)
 
 ### Solutions / Actions Taken
 - 

@@ -129,8 +129,8 @@ def save_score():
 
     status_label.config(text="Score saved! " + name + " scored " + score_text + " in Game " + game_text)
     score_entry.delete(0, tk.END)
-    
-    def show_leaderboard():
+
+def show_leaderboard():
     all_names  = []
     all_totals = []
     all_types  = []
@@ -184,3 +184,39 @@ def save_score():
         message = message + place + "  " + all_names[i] + " (" + all_types[i] + ")  -  " + str(all_totals[i]) + " pts\n"
  
     messagebox.showinfo("Leaderboard", message)
+    import tkinter as tk
+
+window = tk.Tk()
+window.title("Basketball Scorer")
+
+tk.Label(window, text="Team").grid(row=0, column=0)
+team_name_entry = tk.Entry(window)
+team_name_entry.grid(row=0, column=1)
+
+players_entry = tk.Entry(window)
+players_entry.insert(0, "Alice, Bob, Carl")
+players_entry.grid(row=1, column=1)
+
+tk.Button(window, text="Add Team", command=add_team).grid(row=0, column=2)
+
+player_name_entry = tk.Entry(window)
+player_name_entry.grid(row=2, column=1)
+tk.Button(window, text="Add Player", command=add_player).grid(row=2, column=2)
+
+game_entry = tk.Entry(window)
+game_entry.grid(row=3, column=1)
+
+score_name_entry = tk.Entry(window)
+score_name_entry.grid(row=4, column=1)
+
+score_entry = tk.Entry(window)
+score_entry.grid(row=5, column=1)
+
+tk.Button(window, text="Save", command=save_score).grid(row=5, column=2)
+
+tk.Button(window, text="Leaderboard", command=show_leaderboard).grid(row=6, column=1)
+
+status_label = tk.Label(window, text="")
+status_label.grid(row=7, column=1)
+
+window.mainloop()
