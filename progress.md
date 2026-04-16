@@ -36,6 +36,7 @@ April 10:Refactor add_team function to use messagebox for error handling and rem
 April 13:Added add_player function to handle player registration with validation
 April 14:Added save_score function with validation and error handling for score input
 April 15:Added show_leaderboard function to display total scores for teams and players
+April 16:Added leaderboard functionality to display ranked scores for teams and players
 > Add a new session at the top each time you work.
 
 ---
@@ -89,6 +90,10 @@ April 15:Added show_leaderboard function to display total scores for teams and p
 **Time spent:** [1 hour]  
 **Focus:** [Added show_leaderboard function to display total scores for teams and players]
 
+## Session [10]
+**Date:** April 16
+**Time spent:** [1 hour]  
+**Focus:** [Added leaderboard functionality to display ranked scores for teams and players]
 
 
 ### Problems / Challenges
@@ -145,7 +150,7 @@ April 15:Added show_leaderboard function to display total scores for teams and p
 **Focus:** [What did you work on?]
 
 ### Problems / Challenges
-- 
+- Line 134 All Names (error)
 - 
 
 ### Solutions / Actions Taken

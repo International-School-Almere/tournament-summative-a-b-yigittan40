@@ -154,3 +154,33 @@ def save_score():
     if len(all_names) == 0:
         messagebox.showinfo("Leaderboard", "No teams or players added yet.")
         return
+    
+    for i in range(len(all_totals)):
+        for j in range(i + 1, len(all_totals)):
+            if all_totals[j] > all_totals[i]:
+                temp = all_totals[i]
+                all_totals[i] = all_totals[j]
+                all_totals[j] = temp
+                temp = all_names[i]
+                all_names[i] = all_names[j]
+                all_names[j] = temp
+                temp = all_types[i]
+                all_types[i] = all_types[j]
+                all_types[j] = temp
+ 
+    message = "BASKETBALL TOURNAMENT LEADERBOARD\n\n"
+ 
+    for i in range(len(all_names)):
+        rank = i + 1
+        if rank == 1:
+            place = "1st"
+        elif rank == 2:
+            place = "2nd"
+        elif rank == 3:
+            place = "3rd"
+        else:
+            place = str(rank) + "th"
+ 
+        message = message + place + "  " + all_names[i] + " (" + all_types[i] + ")  -  " + str(all_totals[i]) + " pts\n"
+ 
+    messagebox.showinfo("Leaderboard", message)
